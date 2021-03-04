@@ -1,21 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "./form.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
 import { AddTodo } from "../actions/actions";
 
 const Form = () => {
-  const [input, setInput] = useState("");
+  const dispatch = useDispatch();
 
-  const updateInput = (content) => {
-    setInput(content);
+  const handleAddTo = async (e) => {
+    e.preventDefault();
+    const inputValue = e.target.todolist.value;
+    console.log(inputValue);
+    e.target.todolist.value = "";
+    dispatch(AddTodo(inputValue));
   };
 
-  const mynotes = useSelector((state) => state.frm.notes);
-  const dispatch = useDispatch();
   return (
     <div>
-      <form>
+      <form onSubmit={handleAddTo}>
         <label htmlFor="input field">
           {" "}
           <input
@@ -23,19 +25,12 @@ const Form = () => {
             id="insertnote"
             name="todolist"
             placeholder="Add your note"
-            onChange={(e) => updateInput(e.target.value)}
           ></input>
         </label>
-        <Button
-          type="submit"
-          id="addBtn"
-          variant="dark"
-          onClick={() => dispatch(AddTodo(input))}
-        >
+        <Button type="submit" id="addBtn" variant="dark">
           Add Note
         </Button>
       </form>
-      <p> mynotes= {mynotes}</p>
     </div>
   );
 };

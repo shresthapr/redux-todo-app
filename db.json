@@ -1,9 +1,34 @@
 {
-  "myslist": [
-    { "id": 1, "value": "Note list appearance" },
-    { "id": 1, "value": "Note list appearance" },
-    { "id": 1, "value": "Note list appearance" },
-    { "id": 1, "value": "Note list appearance" },
-    { "id": 1, "value": "Note list appearance" }
+  "noteslist": [
+    {
+      "id": 1,
+      "text": "Note list appearance",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "text": "Note list appearance",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "text": "Note list appearance",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "text": "Note list appearance",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "text": "Note list appearance",
+      "completed": false
+    },
+    {
+      "text": "test123",
+      "completed": false,
+      "id": 6
+    }
   ]
 }
